@@ -50,6 +50,17 @@
         //const house2 = result.meshes[0];
         //house2.position.y = 1;
     });
+            
+   
+    // Load the sound, give it time to load and play it every 3 seconds
+    const bounce = new BABYLON.Sound("bounce", "sounds/bounce.wav", scene);
+    setInterval(() => bounce.play(), 3000);
+            
+            
+    //add ground        
+    // const ground = BABYLON.MeshBuilder.CreateGround("ground", {width:1000, height:1000});
+    //ground.position.y = -10;
+    //ground.material.alpha = 0;
 
 
     return scene;
