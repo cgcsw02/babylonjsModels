@@ -38,16 +38,22 @@
         // Add your code here matching the playground format
         const createScene = function () {
     
-            const scene = new BABYLON.Scene(engine);  
+    const scene = new BABYLON.Scene(engine);
 
-            BABYLON.SceneLoader.ImportMeshAsync("", "https://assets.babylonjs.com/meshes/", "box.babylon");
+    const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
+    camera.attachControl(canvas, true);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-            const camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 15, new BABYLON.Vector3(0, 0, 0));
-            camera.attachControl(canvas, true);
-            const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
+   const model =  BABYLON.SceneLoader.ImportMeshAsync("", "https://raw.githubusercontent.com/cgcsw02/babylonjsModels/main/Gltf/", "GltfBablyon.gltf").then((result) => {
+       // const house1 = scene.getMeshByName("RootNode (gltf orientation matrix)");
+        //house1.position.y = 10;
+        //const house2 = result.meshes[0];
+        //house2.position.y = 1;
+    });
 
-            return scene;
-        };
+
+    return scene;
+};
 
         const scene = createScene(); //Call the createScene function
 
