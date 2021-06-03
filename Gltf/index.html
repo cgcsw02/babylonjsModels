@@ -44,12 +44,30 @@
     camera.attachControl(canvas, true);
     const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0));
 
-   const model =  BABYLON.SceneLoader.ImportMeshAsync("", "https://raw.githubusercontent.com/cgcsw02/babylonjsModels/main/Gltf/", "GltfBablyon.gltf").then((result) => {
-       // const house1 = scene.getMeshByName("RootNode (gltf orientation matrix)");
-        //house1.position.y = 10;
+  
+    const model =  BABYLON.SceneLoader.ImportMeshAsync("", "https://raw.githubusercontent.com/cgcsw02/babylonjsModels/main/Gltf/", "BeeModel.gltf").then((result) => {
+     const house1 = scene.getMeshByName("polySurface27");
+      house1.position.y = 100;
+      house1.position.z = -150;
+      house1.position.x = -40;
+       house1.scaling = new BABYLON.Vector3(5, 5, 5);
+       
         //const house2 = result.meshes[0];
-        //house2.position.y = 1;
+       // house2.position.y = 1;
+
+       
     });
+
+    const model2 =  BABYLON.SceneLoader.ImportMeshAsync("", "https://raw.githubusercontent.com/cgcsw02/babylonjsModels/main/Gltf/", "GltfBablyon.gltf").then((result) => {
+       //const house1 = scene.getMeshByName("polySurface27");
+      // house1.position.y = 1;
+      // house1.scaling = new BABYLON.Vector3(1, 1, 1);
+        //const house2 = result.meshes[0];
+       // house2.position.y = 1;
+
+       
+    });
+
             
    
     // Load the sound, give it time to load and play it every 3 seconds
